@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Available Rooms</h2>
+    {% if rooms %}
+        <ul>
+            {% for room in rooms %}
+                <li>{{ room.name }} - ${{ room.price }}/night</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No rooms available for the selected dates.</p>
+    {% endif %}
+{% endblock %}
